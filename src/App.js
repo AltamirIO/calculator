@@ -3,18 +3,20 @@ import Calculator from './Calculator'
 import './App.css'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      calculatedValue: 0
-    }
+  state = {
+    calculatedValue: 0
   }
+
   onPress = (value) => {
+    console.log(value)
     // do something with this value
   }
   render() {
     return (
-      <Calculator />
+      <Calculator
+        calculatedValue={this.state.calculatedValue}
+        onPress={this.onPress}
+      />
     )
   }
 }
